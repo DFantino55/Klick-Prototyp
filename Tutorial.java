@@ -19,6 +19,7 @@ public class Tutorial extends JFrame {
 
         frame1.add(textArea);
         textArea.setLineWrap(true);
+        textArea.setEditable(false);
 
         addButtons(frame1);
 
@@ -29,7 +30,7 @@ public class Tutorial extends JFrame {
     }
 
     public void addButtons(JFrame frame){
-        frame.setSize(500,500);
+        frame.setSize(300,300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         btnPanel.add(close);
@@ -60,6 +61,7 @@ public class Tutorial extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 //TODO Aufruf einer neuen Klasse
+                frame.setVisible(false);
             }
         });
 
