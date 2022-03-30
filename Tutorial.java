@@ -60,7 +60,6 @@ public class Tutorial extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                //TODO Aufruf einer neuen Klasse
                 frame.setVisible(false);
             }
         });
