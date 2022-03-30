@@ -1,16 +1,23 @@
 package src.src;
 
 import javax.swing.*;
+import javax.swing.text.DefaultEditorKit;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class AfterFrame extends JFrame {
     JPanel sidebarPanel = new JPanel();
+    JPanel btnPanel = new JPanel();
     JFrame frame1 = new JFrame();
 
     JPanel searchpanel = new JPanel();
     JPanel arbeitsflaeche = new JPanel();
     JTextArea textArea1 = new JTextArea();
     JTextArea textArea2 = new JTextArea();
+    JButton file = new JButton("Anzeigen");
+    JButton edit = new JButton("Erfassen");
+    JButton help = new JButton("Eintragen");
     JTextField searchbar = new JTextField("");
     JButton search = new JButton("suchen");
 
@@ -28,23 +35,25 @@ public class AfterFrame extends JFrame {
 
     public void addSideBarPanel(JFrame frame){
         //frame = new JFrame("MenuSample Example");
-        sidebarPanel.setLayout(new GridLayout(3,1));
+        btnPanel.setLayout(new GridLayout(3,1));
+        sidebarPanel.setLayout(new BorderLayout());
         //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //JLabel jLabel = new JLabel(new ImageIcon("Images/Kanti-Hottingen_Schriftzug.jpg"));
 
-        JButton file = new JButton("File");
-        JButton edit = new JButton("Edit");
-        JButton help = new JButton("Help");
 
 
-        sidebarPanel.add(file);
 
-        sidebarPanel.add(edit);
-        sidebarPanel.add(help);
-        //sidebarPanel.add(jLabel);
+        btnPanel.add(file);
+        file.addActionListener(new btnListener());
+        btnPanel.add(edit);
+        edit.addActionListener(new btnListener());
+        btnPanel.add(help);
+        help.addActionListener(new btnListener());
 
-        //frame.setSize(350, 250);
 
+        sidebarPanel.add(btnPanel, BorderLayout.NORTH);
+        sidebarPanel.add(new JLabel(), BorderLayout.CENTER);
+        //sidebarPanel.add()
         frame.getContentPane().add(sidebarPanel, BorderLayout.WEST);
     }
 
@@ -63,17 +72,12 @@ public class AfterFrame extends JFrame {
         arbeitsflaeche.add(textArea1);
         arbeitsflaeche.add(textArea2);
         textArea1.setPreferredSize(new Dimension(200,400));
-        textArea2.setPreferredSize(new Dimension(200,400));
+        //textArea2.setPreferredSize(new Dimension(200,400));
         textArea1.setLineWrap(true);
-        textArea2.setLineWrap(true);
-        textArea1.setText("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor " +
-                "invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et " +
-                "justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum " +
-                "dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod" +
-                " tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam" +
-                " et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem" +
-                " ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy " +
-                "eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At");
+       // textArea2.setLineWrap(true);
+
+
+        /*
         textArea2.setText("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor " +
                 "invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et " +
                 "justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum " +
@@ -82,9 +86,30 @@ public class AfterFrame extends JFrame {
                 "et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem " +
                 "ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy " +
                 "eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At");
+
+
+         */
     }
+
 
     public static void main(String[] args) {
         new AfterFrame();
     }
+
+    class btnListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            textArea1.setText("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor " +
+                    "invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et " +
+                    "justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum " +
+                    "dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod" +
+                    " tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam" +
+                    " et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem" +
+                    " ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy " +
+                    "eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At");
+        }
+    }
 }
+
+
