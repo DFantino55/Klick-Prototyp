@@ -1,3 +1,5 @@
+package src.src;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -44,6 +46,7 @@ public class SwingLoginExample implements ActionListener, KeyListener {
         jFrame.setResizable(false);
         contentPane = jFrame.getContentPane();
         jFrame.setVisible(true);
+
     }
 
     //Menü erstellen
@@ -155,7 +158,8 @@ public class SwingLoginExample implements ActionListener, KeyListener {
 
     //Dialog erstellen
     private void createMessage(String message){
-      new Tutorial();
+      new AfterFrame();
+        jFrame.dispose();
 
     }
 

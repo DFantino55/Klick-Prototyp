@@ -19,9 +19,10 @@ public class AfterFrame extends JFrame {
         frame1.setVisible(true);
         frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         addSearchPanel(frame1);
-
-
+        frame1.setLocationRelativeTo(null);
+        frame1.setSize(500,500);
         addTextArea(frame1);
+        new Tutorial();
 
     }
 
