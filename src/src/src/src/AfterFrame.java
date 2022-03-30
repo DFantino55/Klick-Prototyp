@@ -41,7 +41,7 @@ public class AfterFrame extends JFrame {
         //JLabel jLabel = new JLabel(new ImageIcon("Images/Kanti-Hottingen_Schriftzug.jpg"));
 
 
-
+        Photo photo = new Photo();
 
         btnPanel.add(file);
         file.addActionListener(new btnListener());
@@ -53,7 +53,7 @@ public class AfterFrame extends JFrame {
 
         sidebarPanel.add(btnPanel, BorderLayout.NORTH);
         sidebarPanel.add(new JLabel(), BorderLayout.CENTER);
-        //sidebarPanel.add()
+        sidebarPanel.add(photo.photoLabel, BorderLayout.SOUTH);
         frame.getContentPane().add(sidebarPanel, BorderLayout.WEST);
     }
 
