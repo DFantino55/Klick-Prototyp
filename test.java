@@ -1,48 +1,53 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class AfterFrame extends JFrame {
-    JPanel sidebarPanel = new JPanel();
-    JFrame frame1 = new JFrame();
+public class test extends JFrame {
 
+    JPanel btnPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
     JPanel searchpanel = new JPanel();
     JPanel arbeitsflaeche = new JPanel();
     JTextArea textArea1 = new JTextArea();
     JTextArea textArea2 = new JTextArea();
+
     JTextField searchbar = new JTextField("");
+
+    JFrame frame1 = new JFrame();
+    JFrame frame2 = new JFrame();
+    JFrame frame3 = new JFrame();
+
+    JButton next = new JButton(">");
+    JButton back = new JButton("<");
+    JButton close = new JButton("X");
     JButton search = new JButton("suchen");
 
-    public AfterFrame(){
-        addSideBarPanel(frame1);
-        frame1.setVisible(true);
-        frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        addSearchPanel(frame1);
+    public test(){
+        addButtons(frame1);
+        addButtons(frame2);
+        addButtons(frame3);
 
+        addSearchPanel(frame1);
+        addSearchPanel(frame2);
+        addSearchPanel(frame3);
 
         addTextArea(frame1);
-
+        addTextArea(frame2);
+        addTextArea(frame3);
     }
 
-    public void addSideBarPanel(JFrame frame){
-        //frame = new JFrame("MenuSample Example");
-        sidebarPanel.setLayout(new GridLayout(3,1));
-        //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //JLabel jLabel = new JLabel(new ImageIcon("Images/Kanti-Hottingen_Schriftzug.jpg"));
+    public static void main(String[] args) {
+        new Tutorial();
+    }
 
-        JButton file = new JButton("File");
-        JButton edit = new JButton("Edit");
-        JButton help = new JButton("Help");
+    public void addButtons(JFrame frame){
+        frame.setSize(500,500);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        btnPanel.add(close);
+        btnPanel.add(back);
+        btnPanel.add(next);
 
-        sidebarPanel.add(file);
+        frame.getContentPane().add(btnPanel, BorderLayout.SOUTH);
 
-        sidebarPanel.add(edit);
-        sidebarPanel.add(help);
-        //sidebarPanel.add(jLabel);
-
-        //frame.setSize(350, 250);
-
-        frame.getContentPane().add(sidebarPanel, BorderLayout.WEST);
     }
 
     public void addSearchPanel(JFrame frame){
@@ -81,7 +86,6 @@ public class AfterFrame extends JFrame {
                 "eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At");
     }
 
-    public static void main(String[] args) {
-        new AfterFrame();
-    }
+
+
 }
