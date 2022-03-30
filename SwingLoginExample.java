@@ -7,7 +7,7 @@ import java.awt.event.KeyListener;
 
 public class SwingLoginExample implements ActionListener, KeyListener {
 
-    //Fenster
+
     private JFrame jFrame;
     private Container contentPane;
 
