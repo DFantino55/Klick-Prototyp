@@ -21,6 +21,10 @@ public class Tutorial extends JFrame {
         addButtons(frame1);
         addButtons(frame2);
         addButtons(frame3);
+
+        addSearchPanel(frame1);
+        addSearchPanel(frame2);
+        addSearchPanel(frame3);
     }
 
     public static void main(String[] args) {
@@ -36,12 +40,18 @@ public class Tutorial extends JFrame {
         btnPanel.add(next);
 
         frame.getContentPane().add(btnPanel, BorderLayout.SOUTH);
+
+    }
+
+    public void addSearchPanel(JFrame frame){
         searchpanel.setLayout(new FlowLayout());
-        frame1.getContentPane().add(searchpanel, BorderLayout.NORTH);
+        frame.getContentPane().add(searchpanel, BorderLayout.NORTH);
         searchbar.setPreferredSize(new Dimension(220, 30));
         searchpanel.add(searchbar);
         searchpanel.add(search);
-        frame1.setVisible(true);
+        frame.setVisible(true);
     }
+
+
 
 }
