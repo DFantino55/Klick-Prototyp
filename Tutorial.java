@@ -3,8 +3,7 @@ import java.awt.*;
 
 public class Tutorial extends JFrame {
 
-    JPanel southPanel = new JPanel(new GridLayout());
-    JPanel btnPanel = new JPanel(new GridLayout(1,3));
+    JPanel btnPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 
     JFrame frame1 = new JFrame();
     JFrame frame2 = new JFrame();
@@ -15,15 +14,14 @@ public class Tutorial extends JFrame {
     JButton close = new JButton("X");
 
     public Tutorial(){
-        setSize(500,500);
+        frame1.setSize(500,500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         btnPanel.add(close);
         btnPanel.add(back);
         btnPanel.add(next);
-        southPanel.add(btnPanel, BorderLayout.EAST);
 
-        frame1.getContentPane().add(southPanel, BorderLayout.SOUTH);
+        frame1.getContentPane().add(btnPanel, BorderLayout.SOUTH);
 
         frame1.setVisible(true);
     }
