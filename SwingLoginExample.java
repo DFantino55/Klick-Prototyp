@@ -155,8 +155,11 @@ public class SwingLoginExample implements ActionListener, KeyListener {
 
     //Dialog erstellen
     private void createMessage(String message){
-        JOptionPane.showMessageDialog(jFrame,message);
+      new Tutorial();
+
     }
+
+
 
     //Event Handling
     @Override
