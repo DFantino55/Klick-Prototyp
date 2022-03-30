@@ -32,6 +32,7 @@ public class Tutorial extends JFrame {
     public void addButtons(JFrame frame){
         frame.setSize(300,300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
 
         btnPanel.add(close);
         btnPanel.add(back);
